@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин дверей</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Магазин дверей</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('shop')">Двери</a></li>
+                <li><a href="#" onclick="showSection('cart')">Корзина (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#" onclick="showSection('contact')">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Добро пожаловать в наш магазин дверей!</h2>
+        <p>Мы предлагаем широкий выбор дверей для вашего дома. С нами ваш дом станет уютным и стильным!</p>
+    </section>
+
+    <section id="shop">
+        <h2>Наши товары</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="images/modern-door.webp" alt="Дверь Модерн">
+                <h3>Дверь Модерн</h3>
+                <p>Cтильный дизайн, отличное качество. <br><strong>15 000 руб.</strong></p>
+                <button class="buy-btn" onclick="addToCart('Дверь Модерн', 15000, this)">Добавить в корзину</button>
+                <div class="notification" id="notification1" style="display: none;">Товар добавлен в корзину</div>
+            </div>
+            <div class="product">
+                <img src="images/classic-door.webp" alt="Дверь Классика">
+                <h3>Дверь Классика</h3>
+                <p>Классический стиль, идеально подходит для любого интерьера. <br><strong>12 000 руб.</strong></p>
+                <button class="buy-btn" onclick="addToCart('Дверь Классика', 12000, this)">Добавить в корзину</button>
+                <div class="notification" id="notification2" style="display: none;">Товар добавлен в корзину</div>
+            </div>
+            <div class="product">
+                <img src="images/eco-door.webp" alt="Дверь Эко">
+                <h3>Дверь Эко</h3>
+                <p>Экологичный материал, современный стиль. <br><strong>18 000 руб.</strong></p>
+                <button class="buy-btn" onclick="addToCart('Дверь Эко', 18000, this)">Добавить в корзину</button>
+                <div class="notification" id="notification3" style="display: none;">Товар добавлен в корзину</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" style="display: none;">
+        <h2>Корзина</h2>
+        <div id="cart-content">
+            <p>В вашей корзине пока нет товаров.</p>
+        </div>
+        <button onclick="goToCheckout()">Перейти к оформлению</button>
+    </section>
+
+    <section id="checkout" style="display: none;">
+        <h2>Оформление заказа</h2>
+        <form id="checkout-form">
+            <label for="name">Ваше имя:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="address">Адрес доставки:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            
+            <button type="submit">Подтвердить заказ</button>
+        </form>
+        <button onclick="showSection('cart')">Назад в корзину</button>
+    </section>
+
+    <section id="contact" style="display: none;">
+        <h2>Контакты</h2>
+        <p>Вы можете связаться с нами по телефону или электронной почте.</p>
+        <p>Email: <a href="mailto:info@doorsshop.ru">info@doorsshop.ru</a></p>
+        <p>Телефон: +7 123 456-78-90</p>
+        <h3>Мы осуществляем доставку по всей России!</h3>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Интернет-магазин дверей</p>
+        <p><a href="#" onclick="showSection('shop')">Назад в магазин</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
